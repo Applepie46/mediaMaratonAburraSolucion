@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
         } else {
-            imcInput.value = "Calculo IMC"
+            imcInput.value = ""
         }
     }
 
