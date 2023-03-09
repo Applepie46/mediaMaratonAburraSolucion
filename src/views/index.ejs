@@ -1,7 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("partials/head.ejs") %>
+<%- include("./partials/head.ejs") %>
 <body>
-    <%= title %>
+    <main class="main-container">
+        <section class="inner-container">
+            <div class="title-container">
+                <h1>Bienvenido</h1>
+            </div>
+            <form class="form-container"  action="">
+                <div class="">
+                    <label for="name">Nombre:</label>
+                    <input required class="control-form" type="text" id="name" placeholder="Ingresa tu nombre completo">
+                </div>
+                <div class="">
+                    <label for="id">Numero de identificacion:</label>
+                    <input required class="control-form" type="number" id="id" placeholder="Ingresa tu numero de identificacion">
+                </div>
+                <div class="">
+                    <label for="city">Ciudad:</label>
+                    <select name="" id="city">
+                        <option selected value="none">Selecciona una ciudad</option>
+                        <% cities.forEach((city) => { %>
+                            <option value="<%= city %>"><%= city %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="">
+                    <label for="height">Altura:</label>
+                    <input class="control-form height-input" step="any" type="number" id="height" placeholder="Ingresa tu altura en mts">
+                </div>
+                <div class="">
+                    <label for="weight">Peso:</label>
+                    <input class="control-form weight-input"  type="number" id="weight" placeholder="Ingresa tu peso en kg">
+                </div>
+                <div>
+                    <label for="IMC">IMC(índice de masa corporal)</label>
+                    <input type="text" class="IMC-input" disabled placeholder="Ingresa ">
+                </div>
+                <div>
+                    <label for="size">Talla camiseta:</label>
+                    <select required name="" id="size">
+                        <option selected value="">Slecciona una opcion</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <div>
+                    <p>¿Durante el ejercicio o deporte que practica ha tenido dolor en el pecho?</p>
+                    <input type="radio" id="radio-yes" name="question" value="Si">
+                    <label for="radio-yes">Si.</label>
+                    <br>
+                    <input type="radio" id="radio-no" name="question" value="No">
+                    <label for="radio-no">No.</label>
+                </div>
+                <div>
+                    <label for="valoration">Valoracion</label>
+                    <input type="text" id="valoration" disabled placeholder="Resultado de valoracion">
+                </div>
+                <div>
+                    <button type="reset">Cancelar</button>
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <%- include("./partials/scripts.ejs") %>
 </body>
 </html>
