@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 case (imcFormula >= 25 && imcFormula < 30):
                     imcInput.value = `Sobrepeso`;
                     break;
-                case (imcFormula >= 30 && imcFormula < 35):
+                case (imcFormula >= 30 && imcFormula < 39.9):
                     imcInput.value = `Obesidad grado 1`;
                     break;
                 case (imcFormula > 40):

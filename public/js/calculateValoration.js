@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultInput.value = "NO ACTO"
             }
         } else {
-            resultInput.value = "Escribe tu altura y tu peso en los campos solicitados"
+            resultInput.value = "Ingresa los campos de altura y peso"
         }
     }
 

@@ -1,0 +1,240 @@
+
+* {
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(253, 250, 247);
+}
+
+/* Title and logo styles */
+
+.inner-container {
+  padding: 10px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.title-container .main-title {
+  font-size: x-large;
+  margin: 0;
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-container img {
+  width: 80%;
+  padding: 10px;
+}
+
+.go-down-container {
+  margin-top: 30px;
+}
+
+.go-to-form {
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.go-down {
+  align-self: center;
+  font-size: 20px;
+  color: black;
+  height: 45px;
+  opacity: 0.75;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: bounce_513 1s infinite;
+}
+
+@keyframes bounce_513 {
+  0%,
+    100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+
+
+/* Form styles */
+
+.form-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  background-color: #F4F4F4;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  line-height: 30px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.input:focus {
+  background-color: #EAEAEA;
+}
+
+.input:disabled {
+  background-color: #DADADA;
+  color: #A3A3A3;
+}
+
+.select-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.select-group label {
+  margin-bottom: 5px;
+}
+
+.select {
+  background-color: #F4F4F4;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  line-height: 30px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.input:read-only {
+  background-color: #F4F4F4;
+  color: #A3A3A3;
+  cursor: not-allowed;
+}
+
+.input-group-calc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group-calc input {
+  text-align: center;
+}
+
+.input-group-calc label {
+  margin-bottom: 5px;
+}
+
+.radio-btn-group {
+  width: 100%;
+}
+
+.radio-btn-group p {
+  text-align: center;
+}
+
+.form-btns {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button-reset {
+  width: 100%;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  border: 2.5px solid #444141;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: #8c8888;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-reset:hover {
+  background-color: #e5e1e1;
+  border-color: #8c8888;
+  color: black;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.button-reset:active {
+  transform: scale(0.95);
+}
+
+.button-submit {
+  width: 100%;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  border: 2.5px solid #1e48c4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: #227ae4;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-submit:hover {
+  background-color: #dbe9f9;
+  color: black;
+  border-color: #227ae4;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.button-submit:active {
+  transform: scale(0.95);
+}
