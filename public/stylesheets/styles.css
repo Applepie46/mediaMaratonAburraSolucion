@@ -110,6 +110,7 @@ body {
   -moz-appearance: none;
   appearance: none;
   transition: background-color 0.3s ease-in-out;
+  font-weight: bolder;
 }
 
 .input:focus {
@@ -150,6 +151,7 @@ body {
   -moz-appearance: none;
   appearance: none;
   transition: background-color 0.3s ease-in-out;
+  font-weight: bolder;
 }
 
 .input:read-only {
@@ -167,6 +169,7 @@ body {
 
 .input-group-calc input {
   text-align: center;
+  color: black;
 }
 
 .input-group-calc label {
@@ -245,9 +248,8 @@ body {
 
 /* Form validations styles start */
 
-.is_invalid {
+.is-invalid {
   border: 2px solid red !important;
-  background-color: pink !important;
 }
 .text-danger {
   color: crimson;

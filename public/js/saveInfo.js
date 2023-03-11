@@ -43,70 +43,57 @@ document.addEventListener("DOMContentLoaded", () => {
         const userInfoContainer = document.querySelector(".user-info-container");
         // the innerHTML of the div get updates with localStorage data
         userInfoContainer.innerHTML = `
-                    <p>${userInfo.name}</p>
-                    <p>${userInfo.idNumber}</p>
-                    <p>${userInfo.email}</p>
+                    <p>${ userInfo.name }</p>
+                    <p>${ userInfo.idNumber }</p>
+                    <p>${ userInfo.email }</p>
                     <p>
                         <strong class="strong">
                             Ciudad:
                         </strong> 
-                        ${userInfo.city}
+                        ${ userInfo.city }
                     </p>
                     <p>
                         <strong class="strong">
                             Altura:
                         </strong> 
-                        ${userInfo.height}mts
+                        ${ userInfo.height }mts
                     </p>
                     <p>
                         <strong class="strong">
                             Peso:
                         </strong> 
-                        ${userInfo.weight}kg
+                        ${ userInfo.weight }kg
                     </p>
                     <p>
                         <strong class="strong">
-                            IMC():
+                            IMC(índice de masa corporal):
                         </strong>
-                        ${userInfo.imc}
+                        ${ userInfo.imc }
                     </p>
                     <p>
                         <strong class="strong">
                             Talla camiseta:
                         </strong> 
-                        ${userInfo.size}
+                        ${ userInfo.size }
                     </p>
                     <p id="check-question">¿Durante el ejercicio o deporte que practica ha tenido dolor en el pecho?</p>
                     <p>
                         <strong class="strong">
                             respuesta:
                         </strong> 
-                        ${userInfo.question}
+                        ${ userInfo.question === undefined ? "" : userInfo.question }
                     </p>
                     <p>
                         <strong class="strong">
                             Valoracion:
                         </strong>
-                        ${userInfo.estimation}
+                        ${ userInfo.estimation }
                     </p>`
         // Add a class that makes appear the pop up            
         popUp.classList.add("active-pop-up");
     }
-    /*function validations() {
-        const errors = [];
-        if (nameInput.value === "" || nameInput.value === null || nameInput.value === undefined) {
-            //nameInput.classList.add("is-invalid");
-            //nameInput.parentElement.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
-            errors.push("El campo Nombre debe ser diligenciado");
-            if (nameInput.parentElement !== null && nameInput.parentElement.parentElement !== null && nameInput.parentElement.classList.contains("input-group")) {
-                nameInput.classList.add("is-invalid");
-                nameInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
-              }
-        } else {
-            nameInput.classList.remove("is-invalid");
-        }
-        return errors;
-    }*/
+    
+    // Validates the iputs of the form that are mandatory
     function validations() {
         const errors = [];
         
@@ -116,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const downErrorName = nameInput.parentElement.querySelector('.text-danger');
         if (nameInput.value === "" || nameInput.value === null || nameInput.value === undefined) {
             nameInput.classList.add("is-invalid");
+            nameInput.focus();
             if (!downErrorName) {
                 nameInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
             } else {
@@ -134,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const downErrorId = idNumberInput.parentElement.querySelector('.text-danger');
         if (idNumberInput.value === "" || idNumberInput.value === null || idNumberInput.value === undefined) {
             idNumberInput.classList.add("is-invalid");
+            idNumberInput.focus();
             if (!downErrorId) {
                 idNumberInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Numero de identificacion</strong> debe ser diligenciado</p>`;
             } else {
@@ -167,24 +156,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return errors;
     }
-
-
-    // Element form get a listener when user submiting the form
-    // Activates previous fucntions to save data and Show data
-    /*form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        saveInfo();
-        showInfo();
-
-    });*/
+    /* Add a listener to the form so when it tries to get 
+    submited it firsts validate the form and then it triggers the functions saveInfo and showInfo */
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const errors = validations();
-
         if (errors.length > 0) {
-            // Handle the errors here, for example by showing them in the form
-            console.log(errors);
             return;
         }
 
