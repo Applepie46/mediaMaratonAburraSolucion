@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const weight = parseFloat(weightInput.value);
         const height = parseFloat(heighttInput.value);
 
+        if (height > 300) {
+            height /= 100;
+        }
+
         if (weight && height) {
             const imcFormula = weight / (height ** 2);
 
@@ -28,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     imcInput.value = `Obesidad grado 2`;
                     break;
                 default:
-                    imcInput.value = "Ingresa los campos de altura y peso"
+                    imcInput.placeholder = "Ingresa los campos de altura y peso"
                     break;
             }
         } else {
-            imcInput.value = ""
+            imcInput.placeholder = "Ingresa los campos de altura y peso";
         }
     }
 

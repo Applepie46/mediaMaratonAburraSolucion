@@ -1,4 +1,5 @@
 const userController = {
+    // gets API colombia information for cities and render the index view
     formView: async (req, res) => {
         try {
             const cities = [];
