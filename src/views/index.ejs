@@ -17,36 +17,39 @@
                     <a class="go-to-form" href="#form"><i class="fa-solid fa-caret-down go-down"></i></a>
                 </div>
             </div>
-            <form class="form-container" id="form"  action="">
+            <form class="form-container" action="" id="form" >
                 <div class="input-group">
-                    <input required class="control-form input" type="text" id="name" placeholder="Nombre completo">
+                    <input  class="control-form input" required type="text" name="name" id="name" placeholder="Nombre completo">
                 </div>
                 <div class="input-group">
-                    <input required class="control-form input" type="number" id="id" placeholder="Numero de identificacion">
+                    <input  class="control-form input" required type="number" name="idNumber" id="idNumber" placeholder="Numero de identificacion">
+                </div>
+                <div class="input-group">
+                    <input class="control-form input" type="email" name="email" id="email" placeholder="Correo electronico">
                 </div>
                 <div class="select-group">
                     <label for="city">¿De que ciudad vienes?</label>
-                    <select class="select" name="" id="city">
+                    <select class="select" name="city" id="city">
                         
-                        <option selected value="none">Selecciona una ciudad <i class="fa-solid fa-caret-down"></i> </option>
+                        <option selected value="">Selecciona una ciudad <i class="fa-solid fa-caret-down"></i> </option>
                         <% cities.forEach((city) => { %>
                             <option value="<%= city %>"><%= city %></option>
                         <% }); %>
                     </select>
                 </div>
                 <div class="input-group">
-                    <input class="control-form height-input input" step="any" type="number" id="height" placeholder="Altura en mts">
+                    <input class="control-form height-input input" step="any" type="number" name="height" id="height" placeholder="Altura en mts">
                 </div>
                 <div class="input-group">
-                    <input class="control-form weight-input input"  type="number" id="weight" placeholder="Peso en kg">
+                    <input class="control-form weight-input input"  type="number" name="weight" id="weight" placeholder="Peso en kg">
                 </div>
                 <div class="input-group-calc">
                     <label for="IMC">Tu IMC(índice de masa corporal) es:</label>
-                    <input type="text" class="IMC-input input" disabled placeholder="">
+                    <input type="text" class="IMC-input input" name="imcCalc" id="imcCalc" disabled placeholder="">
                 </div>
                 <div class="select-group">
                     <label for="size">Talla camiseta:</label>
-                    <select class="select" required name="" id="size">
+                    <select class="select" required name="size"  name="" id="size">
                         <option selected value="">Slecciona una opcion</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
@@ -56,15 +59,15 @@
                 <div class="radio-btn-group">
                     <p>¿Durante el ejercicio o deporte que practica ha tenido dolor en el pecho?</p>
                     <div>
-                        <input type="radio" id="radio-btn-yes" name="question" value="1">
+                        <input type="radio" id="radio-btn-yes" class="question" name="question" value="Si">
                         <label for="radio-yes">Si.</label>
-                        <input type="radio" id="radio-btn-no" name="question" value="0">
+                        <input type="radio" id="radio-btn-no" class="question" name="question" value="No">
                         <label for="radio-no">No.</label>
                     </div>
                 </div>
                 <div class="input-group-calc">
                     <label for="valoration">Valoracion:</label>
-                    <input class="input" type="text" id="valoration" disabled placeholder="Resultado de valoracion">
+                    <input class="input" type="text" name="estimation" id="estimation" disabled  placeholder="Resultado de valoracion">
                 </div>
                 <div class="form-btns">
                     <button class="button-reset" type="reset">Cancelar</button>
@@ -72,6 +75,21 @@
                 </div>
             </form>
         </section>
+        <div class="pop-up-container">
+            <div class="pop-up-inner">
+                <div class="popUp-image-container">
+                    <img class="rise-shake" src="/images/staticImages/checkNoBg.png" alt="">
+                    <h1>Muchas gracias por tu registro</h1>
+                    <p>Estos fueron los datos guardados</p>
+                </div>
+                <div class="user-info-container">
+                    
+                </div>
+                <div class="check-btn-container">
+                    <a href="" class="check-btn">Entendido</a>
+                </div>
+            </div>
+        </div>
     </main>
     <%- include("./partials/scripts.ejs") %>
 </body>
