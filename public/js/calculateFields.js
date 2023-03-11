@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const weight = parseFloat(weightInput.value);
         const height = parseFloat(heighttInput.value);
 
+        if (height > 300) {
+            height /= 100;
+        }
+
         if (weight && height) {
             const imcFormula = weight / (height ** 2);
 

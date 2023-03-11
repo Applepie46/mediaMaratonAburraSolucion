@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elements
     const form = document.querySelector(".form-container");
     const radioInputEl = document.querySelectorAll(".question");
-
-    //Pop up elements
     const popUp = document.querySelector(".pop-up-container");
-    const p = document.querySelector(".pop-up-container");
 
     // Saves the data of the form into the local storage
     function saveInfo() {
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         //Object with form data
         let userInfo = {
-            id: 1,
             name: document.getElementById("name").value,
             idNumber: document.getElementById("idNumber").value,
             email: document.getElementById("email").value,
