@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Elements
-    const form = document.querySelector(".form-container")
+    const form = document.querySelector(".form-container");
     const radioInputEl = document.querySelectorAll(".question");
-    const submItBtn = document.querySelector(".user-info");
-    
 
     //Pop up elements
     const popUp = document.querySelector(".pop-up-container");
@@ -13,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function saveInfo() {
         // Checks which radio button is pressed
         let checkedValue;
-        for(let radioButton of radioInputEl) {
+        for (let radioButton of radioInputEl) {
             if (radioButton.checked) {
                 checkedValue = radioButton.value;
                 break;
@@ -94,11 +92,104 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add a class that makes appear the pop up            
         popUp.classList.add("active-pop-up");
     }
+    /*function validations() {
+        const errors = [];
+        if (nameInput.value === "" || nameInput.value === null || nameInput.value === undefined) {
+            //nameInput.classList.add("is-invalid");
+            //nameInput.parentElement.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
+            errors.push("El campo Nombre debe ser diligenciado");
+            if (nameInput.parentElement !== null && nameInput.parentElement.parentElement !== null && nameInput.parentElement.classList.contains("input-group")) {
+                nameInput.classList.add("is-invalid");
+                nameInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
+              }
+        } else {
+            nameInput.classList.remove("is-invalid");
+        }
+        return errors;
+    }*/
+    function validations() {
+        const errors = [];
+        
+
+        // Validate name input
+        const nameInput = document.getElementById("name");
+        const downErrorName = nameInput.parentElement.querySelector('.text-danger');
+        if (nameInput.value === "" || nameInput.value === null || nameInput.value === undefined) {
+            nameInput.classList.add("is-invalid");
+            if (!downErrorName) {
+                nameInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Nombre</strong> debe ser diligenciado</p>`;
+            } else {
+                downErrorName.textContent = 'El campo Nombre debe ser diligenciado';
+            }
+            errors.push("El campo Nombre debe ser diligenciado");
+        } else {
+            nameInput.classList.remove("is-invalid");
+            if (downErrorName) {
+                downErrorName.remove();
+            }
+        }
+
+        // Validate ID number input
+        const idNumberInput = document.getElementById("idNumber");
+        const downErrorId = idNumberInput.parentElement.querySelector('.text-danger');
+        if (idNumberInput.value === "" || idNumberInput.value === null || idNumberInput.value === undefined) {
+            idNumberInput.classList.add("is-invalid");
+            if (!downErrorId) {
+                idNumberInput.parentElement.innerHTML += `<p class="text-danger">El campo <strong>Numero de identificacion</strong> debe ser diligenciado</p>`;
+            } else {
+                downErrorId.textContent = 'El campo numero de identificacion debe ser diligenciado';
+            }
+            errors.push("El campo numero identificacion debe ser diligenciado");
+        } else {
+            idNumberInput.classList.remove("is-invalid");
+            if (downErrorId) {
+                downErrorId.remove();
+            }
+        }
+
+        // Validate size select
+        const sizeSelect = document.getElementById("size");
+        const downErrorSize = sizeSelect.parentElement.querySelector('.text-danger');
+        if (sizeSelect.value === "" || sizeSelect.value === null || sizeSelect.value === undefined) {
+            sizeSelect.classList.add("is-invalid");
+            if (!downErrorSize) {
+                sizeSelect.parentElement.innerHTML += `<p class="text-danger">Debes seleccionar una <strong>Talla</strong></p>`;
+            } else {
+                downErrorSize.textContent = 'Debes seleccionar una talla';
+            }
+            errors.push("El campo seleccionar una talla debe ser diligenciado");
+        } else {
+            sizeSelect.classList.remove("is-invalid");
+            if (downErrorSize) {
+                downErrorSize.remove();
+            }
+        }
+
+        return errors;
+    }
+
+
     // Element form get a listener when user submiting the form
     // Activates previous fucntions to save data and Show data
-    form.addEventListener("submit", (e) => {
+    /*form.addEventListener("submit", (e) => {
         e.preventDefault();
         saveInfo();
-        showInfo()
+        showInfo();
+
+    });*/
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const errors = validations();
+
+        if (errors.length > 0) {
+            // Handle the errors here, for example by showing them in the form
+            console.log(errors);
+            return;
+        }
+
+        saveInfo();
+        showInfo();
     });
+
 });

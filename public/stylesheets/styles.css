@@ -90,6 +90,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .input {
@@ -241,6 +242,17 @@ body {
 .button-submit:active {
   transform: scale(0.95);
 }
+
+/* Form validations styles start */
+
+.is_invalid {
+  border: 2px solid red !important;
+  background-color: pink !important;
+}
+.text-danger {
+  color: crimson;
+}
+/* Form validations styles close */
 
 /* Form styles close */
 

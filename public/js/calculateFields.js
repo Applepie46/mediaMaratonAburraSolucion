@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     imcInput.value = `Obesidad grado 2`;
                     break;
                 default:
-                    imcInput.value = "Ingresa los campos de altura y peso"
+                    imcInput.placeholder = "Ingresa los campos de altura y peso"
                     break;
             }
         } else {
-            imcInput.value = ""
+            imcInput.placeholder = "Ingresa los campos de altura y peso";
         }
     }
 
