@@ -89,9 +89,18 @@ https://api-colombia.com/api/v1/Department/2/cities
 - Talla de camiseta (M/L/XL) (obligatorio)
 - ¿Ha tenido dolor en el pecho durante el ejercicio o deporte que practica? (Sí/No)
 
+<p align="center">
+  <img src="https://github.com/Applepie46/mediaMaratonAburraSolucion/blob/master/public/images/readmeImages/formScreenShot.png" />
+</p>
+
 ### Funcionamiento de los campos:
 
 - Los campos obligatorios se validarán el enviar el formulario
+
+<p align="center">
+  <img src="https://github.com/Applepie46/mediaMaratonAburraSolucion/blob/master/public/images/readmeImages/formWithValidationsScreenshot.png" />
+</p>
+
 - El campo IMC es un campo calculado que se genera automáticamente al introducir los 
 valores de altura y peso.
 - El campo de valoración es otro campo calculado que se genera automáticamente en 
@@ -102,6 +111,10 @@ información de la API pública https://api-colombia.com/.
 - Para almacenar la información del usuario, se utiliza el localStorage del navegador. La 
 información se almacena temporalmente hasta que la información es mostrada al 
 usuario, al presionar el botón entendido la información del localStorage es eliminada
+
+<p align="center">
+  <img src="https://github.com/Applepie46/mediaMaratonAburraSolucion/blob/master/public/images/readmeImages/ReadyToGoScreenshot.png" />
+</p>
 
 
 
