@@ -41,30 +41,32 @@ document.addEventListener("DOMContentLoaded", () => {
         userInfoContainer.innerHTML = `
                     <p>${ userInfo.name }</p>
                     <p>${ userInfo.idNumber }</p>
-                    <p>${ userInfo.email }</p>
+                    <p>
+                        ${ userInfo.email === "" ? `<strong class="strong">Email:</strong> Sin respuesta` : userInfo.email }
+                    </p>
                     <p>
                         <strong class="strong">
                             Ciudad:
                         </strong> 
-                        ${ userInfo.city }
+                        ${ userInfo.city === "" ? "Sin respuesta" : userInfo.city }
                     </p>
                     <p>
                         <strong class="strong">
                             Altura:
                         </strong> 
-                        ${ userInfo.height }mts
+                        ${ userInfo.height === "" ? "Sin respuesta" : userInfo.height + "m"  }
                     </p>
                     <p>
                         <strong class="strong">
                             Peso:
                         </strong> 
-                        ${ userInfo.weight }kg
+                        ${ userInfo.weight === "" ? "Sin respuesta" : userInfo.weight + "kg" }
                     </p>
                     <p>
                         <strong class="strong">
                             IMC(índice de masa corporal):
                         </strong>
-                        ${ userInfo.imc }
+                        ${ userInfo.imc === "" ? "Sin respuesta" : userInfo.imc  }
                     </p>
                     <p>
                         <strong class="strong">
@@ -77,13 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         <strong class="strong">
                             respuesta:
                         </strong> 
-                        ${ userInfo.question === undefined ? "" : userInfo.question }
+                        ${ userInfo.question === undefined ? "Sin respuesta" : userInfo.question }
                     </p>
                     <p>
                         <strong class="strong">
                             Valoracion:
                         </strong>
-                        ${ userInfo.estimation }
+                        ${ userInfo.estimation === "" ? "Sin respuesta" : userInfo.estimation }
                     </p>`
         // Add a class that makes appear the pop up            
         popUp.classList.add("active-pop-up");
