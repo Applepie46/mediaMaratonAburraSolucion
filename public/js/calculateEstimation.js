@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     radioBtnYes.addEventListener("change", estimationResult);
     radioBtnNo.addEventListener("change", estimationResult);
     imcInput.addEventListener("input", estimationResult);
+
+    // Adds an event listener to both height and weight listener 
     heighttInput.addEventListener("input", () => {
         radioBtnNo.checked = false;
         radioBtnYes.checked = false;
@@ -22,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultInput.value = "";
     });
 
+    // Validates if the value of the IMC and acording to the value the estamate gest calculated
     function estimationResult() {
         if (imcInput.value) {
 
@@ -46,6 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
             resultInput.value = "";
         }
     }
-
+    // the function gest called again so we can know the value of the IMCInput in real time
     estimationResult();
 });

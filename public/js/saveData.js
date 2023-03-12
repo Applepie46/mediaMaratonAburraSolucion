@@ -154,8 +154,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return errors;
     }
-    /* Add a listener to the form so when it tries to get 
-    submited it firsts validate the form and then it triggers the functions saveInfo and showInfo */
+    /* Add an event listener to the form so when it tries to get 
+    submited it firsts validate the form and then it triggers 
+    the functions saveInfo and showInfo */
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 

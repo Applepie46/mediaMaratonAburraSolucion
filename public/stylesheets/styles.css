@@ -387,6 +387,12 @@ body {
 
   /* Pop up styles start */
 
+  .pop-up-inner {
+    width: 600px;
+    max-height: 80vh;
+    overflow: auto;
+  }
+
   .popUp-image-container h1 {
     font-size: x-large;
   }
@@ -445,6 +451,8 @@ body {
   /* Pop up styles start */
   .pop-up-inner {
     width: 600px;
+    max-height: 80vh;
+    overflow: auto;
   }
   .popUp-image-container h1 {
     font-size: xx-large;
