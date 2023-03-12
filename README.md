@@ -2,7 +2,7 @@
   <img src="https://github.com/Applepie46/mediaMaratonAburraSolucion/blob/master/public/images/logos/logoNoBg.png" />
 </p>
 
-# Media Maratón Aburrá de los Yamesíes - Documentación del proyecto
+# Media Maratón Aburrá de los Yamesíes Documentación del proyecto
 
 ## Introduccion
 Este proyecto es una solución que ofrece un formulario de registro en línea para los 
